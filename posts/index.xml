@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Dillon de Silva</title>
-    <link>http://example.org/posts/</link>
+    <link>https://dillondesilva.com/posts/</link>
     <description>Recent content in Posts on Dillon de Silva</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dillondesilva.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Part one: Inside my music creating process</title>
-      <link>http://example.org/posts/mymusicmakingprocess/</link>
+      <link>https://dillondesilva.com/posts/mymusicmakingprocess/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/mymusicmakingprocess/</guid>
+      <guid>https://dillondesilva.com/posts/mymusicmakingprocess/</guid>
       <description>My first writeup of a two part article series detailing creative tendencies I have and how to get started</description>
     </item>
     
