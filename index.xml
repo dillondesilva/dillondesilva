@@ -6,7 +6,16 @@
     <description>Recent content on Dillon de Silva</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dillondesilva.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dillondesilva.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dude what is Kubernetes?</title>
+      <link>https://dillondesilva.com/posts/dudewhatiskubernetes/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dillondesilva.com/posts/dudewhatiskubernetes/</guid>
+      <description>A brief explanation of what Kubernetes is and how to get started</description>
+    </item>
+    
     <item>
       <title>Part one: Inside my music creating process</title>
       <link>https://dillondesilva.com/posts/mymusicmakingprocess/</link>

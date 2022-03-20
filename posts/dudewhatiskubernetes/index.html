@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Dude what is Kubernetes? | Dillon de Silva</title>
+<meta name="keywords" content="" />
+<meta name="description" content="A brief explanation of what Kubernetes is and how to get started">
+<meta name="author" content="">
+<link rel="canonical" href="https://dillondesilva.com/posts/dudewhatiskubernetes/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dillondesilva.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dillondesilva.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dillondesilva.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dillondesilva.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dillondesilva.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.90.0" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Dude what is Kubernetes?" />
+<meta property="og:description" content="A brief explanation of what Kubernetes is and how to get started" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dillondesilva.com/posts/dudewhatiskubernetes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-20T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-03-20T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dude what is Kubernetes?"/>
+<meta name="twitter:description" content="A brief explanation of what Kubernetes is and how to get started"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dillondesilva.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Dude what is Kubernetes?",
+      "item": "https://dillondesilva.com/posts/dudewhatiskubernetes/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dude what is Kubernetes?",
+  "name": "Dude what is Kubernetes?",
+  "description": "A brief explanation of what Kubernetes is and how to get started",
+  "keywords": [
+    
+  ],
+  "articleBody": "This week, I began tinkering with Kubernetes for a data science related project. Prior to this, I would always hear of this seemingly alien technology and its ability to cause excitement amongst the most elitist developers. Kubernetes was supposedly everywhere and knowing how to use it was a resume worthy addition.\nThere was no way to stop it’s eventual rule over the world.\nContrastingly, I’ve also seen fellow software enthusiasts with their face in their hands, turning more red than the ripest tomato you’ve ever seen due to sheer frustration with the tool (then again, this is in the software developer job description).\nWith fancy new terms that I didn’t understand including clusters, nodes and pods, I decided never to use Kubernetes (or K8s as the cool kids call it) in my personal projects simply because it felt unecessary (and hopefully by the end of this article you’ll understand why). To some extent, I was even fearful of the tool and the hours I might need to spend debugging a complex problem that could be caused by one of a million things.\nDespite this, I started reading into what it is and why it is used. Whilst I’m still fairly new to using K8s, it became clear to me that the concept behind this innovation was to serve a clear purpose, one of which I hope you’ll better understand after this read.\nFor those who don’t live in a container… Before I go into Kubernetes, I feel like it’s worth first explaining what containerised applications are.\nIt’s typical for code to run in the forms of compiled binaries and executables. As brilliant as these are, several problems can arise from this method of publishing code including:\n The need to build and test for multiple environments Security issues from binaries having access to a host machine Longer development times  Containerization is a software development concept which involves taking an application (that could be compiled as a binary) and instead isolating its execution into a virtual environment known as a container. This approach to building software can improve portability as applications within containers can be run as images, usable in any environment with the correct setup for using containers.\nApplications such as Docker allow for container management and have particularly useful features including the ability to remove containers after they have finished being run and interactive modes to enter the container environment.\nI might do another article in future to rant about my passion for containers but for now, I’ll leave it at what has been explained so far :)\nSo where does K8s fit in? Whilst Docker allows you to run and manage your containers, it is limited to being designed for use on a single machine (eg: My MacBook Air). This is brilliant for hobbyists like me but…\nIt is highly unusable for parties which wish to use large and numerous amounts of containers to perform tasks\nThe power of Kubernetes lies in its ability to orchestrate deployment of containerised applications within a distributed computing system, making it possible to run thousands of hefty apps all at once over several machines.\nAs you can probably imagine, this is a pretty impressive feat and a brilliant feature for many large corporates to have.\nLet’s look at the basic structure K8s is comprised of some critical components:\n  Cluster(s): These are groups of several machines working together to run Kubernetes\n  Control Plane: This is a program which is responsible for managing the “health” of your cluster and providing features such as fault tolerance\n  Worker nodes: These are individual machines (either virtual or physical) which are capable of running your actual containerized application\n  Pods: These essentially run worker nodes in groups, helping you to have further control over the arrangement of your applications\n  To get started with setting up a K8s cluster locally for experimenting, check out the docs for a tool called minikube\nAnother critical tool we use to interact with our K8s cluster is kubectl. Alongside the programmer, these tools and structure to how K8s operates helps us to better control our running of containerised applications on large systems.\nSumming up… We did it! This article is only meant to serve as a very brief introduction to Kubernetes however, we’ve covered some essentials including:\n What are the core parts of Kubernetes? Why this is useful for larger, distributed systems  For further reading, check out the official docs!\n",
+  "wordCount" : "735",
+  "inLanguage": "en",
+  "datePublished": "2022-03-20T00:00:00Z",
+  "dateModified": "2022-03-20T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dillondesilva.com/posts/dudewhatiskubernetes/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dillon de Silva",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dillondesilva.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dillondesilva.com/" accesskey="h" title="Dillon de Silva (Alt + H)">Dillon de Silva</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dillondesilva.com/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dillondesilva.com/noagenda" title="No Agenda">
+                    <span>No Agenda</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Dude what is Kubernetes?
+    </h1>
+    <div class="post-description">
+      A brief explanation of what Kubernetes is and how to get started
+    </div>
+    <div class="post-meta"><span title='2022-03-20 00:00:00 +0000 UTC'>March 20, 2022</span>
+
+</div>
+    <h6 style="margin-top: 1vh;">Reading Time: 4 mins</h6>
+  </header> 
+  <div class="post-content"><p>This week, I began tinkering with Kubernetes for a data science related project. Prior to this, I would always hear of this seemingly alien technology and its ability to cause excitement amongst the most elitist developers. Kubernetes was supposedly everywhere and knowing how to use it was a resume worthy addition.</p>
+<p>There was no way to stop it&rsquo;s eventual rule over the world.</p>
+<p>Contrastingly, I&rsquo;ve also seen fellow software enthusiasts with their face in their hands, turning more red than the ripest tomato you&rsquo;ve ever seen due to sheer frustration with the tool (then again, this is in the software developer job description).</p>
+<p>With fancy new terms that I didn&rsquo;t understand including <strong>clusters</strong>, <strong>nodes</strong> and <strong>pods</strong>, I decided never to use Kubernetes (or K8s as the cool kids call it) in my personal projects simply because it felt unecessary (and hopefully by the end of this article you&rsquo;ll understand why). To some extent, I was even fearful of the tool and the hours I might need to spend debugging a complex problem that could be caused by one of a million things.</p>
+<p>Despite this, I started reading into what it is and why it is used. Whilst I&rsquo;m still fairly new to using K8s, it became clear to me that the concept behind this innovation was to serve a clear purpose, one of which I hope you&rsquo;ll better understand after this read.</p>
+<p><img loading="lazy" src="/kubernetesmeme.jpeg" alt="kube"  />
+</p>
+<h2 id="for-those-who-dont-live-in-a-container">For those who don&rsquo;t live in a container&hellip;<a hidden class="anchor" aria-hidden="true" href="#for-those-who-dont-live-in-a-container">#</a></h2>
+<p>Before I go into Kubernetes, I feel like it&rsquo;s worth first explaining what <strong>containerised applications</strong> are.</p>
+<p>It&rsquo;s typical for code to run in the forms of compiled binaries and executables. As brilliant as these are, several problems can arise from this method of publishing code including:</p>
+<ul>
+<li>The need to build and test for multiple environments</li>
+<li>Security issues from binaries having access to a host machine</li>
+<li>Longer development times</li>
+</ul>
+<p><strong>Containerization</strong> is a software development concept which involves taking an application (that could be compiled as a binary) and instead isolating its execution into a virtual environment known as a <strong>container</strong>. This approach to building software can improve portability as applications within containers can be run as images, usable in any environment with the correct setup for using containers.</p>
+<p>Applications such as Docker allow for container management and have particularly useful features including the ability to remove containers after they have finished being run and interactive modes to enter the container environment.</p>
+<p>I might do another article in future to rant about my passion for containers but for now, I&rsquo;ll leave it at what has been explained so far :)</p>
+<h2 id="so-where-does-k8s-fit-in">So where does K8s fit in?<a hidden class="anchor" aria-hidden="true" href="#so-where-does-k8s-fit-in">#</a></h2>
+<p>Whilst Docker allows you to run and manage your containers, it is limited to being designed for use on a single machine (eg: My MacBook Air). This is brilliant for hobbyists like me but&hellip;</p>
+<p><em>It is highly unusable for parties which wish to use large and numerous amounts of containers to perform tasks</em></p>
+<p>The power of Kubernetes lies in its ability to orchestrate deployment of containerised applications within a distributed computing system, making it possible to run thousands of hefty apps all at once over several machines.</p>
+<p>As you can probably imagine, this is a pretty impressive feat and a brilliant feature for many large corporates to have.</p>
+<h2 id="lets-look-at-the-basic-structure">Let&rsquo;s look at the basic structure<a hidden class="anchor" aria-hidden="true" href="#lets-look-at-the-basic-structure">#</a></h2>
+<p>K8s is comprised of some critical components:</p>
+<ul>
+<li>
+<p><strong>Cluster(s)</strong>: These are groups of several machines working together to run Kubernetes</p>
+</li>
+<li>
+<p><strong>Control Plane</strong>: This is a program which is responsible for managing the &ldquo;health&rdquo; of your cluster and providing features such as fault tolerance</p>
+</li>
+<li>
+<p><strong>Worker nodes</strong>: These are individual machines (either virtual or physical) which are capable of running your actual containerized application</p>
+</li>
+<li>
+<p><strong>Pods</strong>: These essentially run worker nodes in groups, helping you to have further control over the arrangement of your applications</p>
+</li>
+</ul>
+<p>To get started with setting up a K8s cluster locally for experimenting, check out the docs for a tool called <a href="https://minikube.sigs.k8s.io/docs/">minikube</a></p>
+<p>Another critical tool we use to interact with our K8s cluster is <code>kubectl</code>. Alongside the programmer, these tools and structure to how K8s operates helps us to better control our running of containerised applications on large systems.</p>
+<h2 id="summing-up">Summing up&hellip;<a hidden class="anchor" aria-hidden="true" href="#summing-up">#</a></h2>
+<p>We did it! This article is only meant to serve as a very brief introduction to Kubernetes however, we&rsquo;ve covered some essentials including:</p>
+<ul>
+<li>What are the core parts of Kubernetes?</li>
+<li>Why this is useful for larger, distributed systems</li>
+</ul>
+<p>For further reading, check out the <a href="https://kubernetes.io/docs/home/">official docs!</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dillondesilva.com/">Dillon de Silva</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
