@@ -9,7 +9,9 @@
 
 
 <p align="left">
+     <a href="https://aws.amazon.com/s3/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg" alt="s3" width="40" height="40"/></a>
     <a href="https://cloud.google.com/?hl=en" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg" alt="google-cloud-services" width="40" height="40"/></a>
+    <a href="https://aws.amazon.com/api-gateway/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/aws-api-gateway.svg" alt="aws-api-gateway" width="40" height="40"/></a>
     <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/firebase-1.svg" alt="firebase" width="40" height="40"/></a>
     <a href="https://www.electronjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/aws-lambda-1.svg" alt="aws-lambda" width="40" height="40"/></a>
     <a href="https://www.electronjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/electron-1.svg" alt="electron" width="40" height="40"/></a>
