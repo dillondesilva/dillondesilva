@@ -5,10 +5,12 @@
 - **Neurospike**: A simulation tool that allows for users to explore neural dynamics through basic computational neuron models
 - **OneThing**: A mindfulness scheduling app, creating a unique experience for users to focus on prioritizing one thing they really want to do each week of their lives.
 
-<!--
 ## 💻 Technologies I am familiar with
 
+
 <p align="left">
+    <a href="https://cloud.google.com/?hl=en" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg" alt="google-cloud-services" width="40" height="40"/></a>
+    <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/firebase-1.svg" alt="firebase" width="40" height="40"/></a>
     <a href="https://www.electronjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/aws-lambda-1.svg" alt="aws-lambda" width="40" height="40"/></a>
     <a href="https://www.electronjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/electron-1.svg" alt="electron" width="40" height="40"/></a>
     <a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" alt="react" width="40" height="40"/></a>
@@ -18,6 +20,7 @@
   <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/></a>
 </p>
 
+<!--
 **dillondesilva/dillondesilva** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
