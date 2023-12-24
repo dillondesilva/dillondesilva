@@ -3,7 +3,6 @@
 
 ## 🔭 What I’m currently working on 
 - **Neurospike**: A simulation tool that allows for users to explore neuronal dynamics through basic computational neuron models
-- **OneThing**: A mindfulness scheduling app, creating a unique experience for users to focus on prioritizing one thing they really want to do each week of their lives.
 
 ## 💻 Technologies I am familiar with
 
