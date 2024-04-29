@@ -10,7 +10,7 @@ Recently, I have founded an organisation called Neurospike. Our mission is to de
 
 In my spare time, I enjoy spending time with my family and friends, sim-racing and video games.
 ## 🔭 What I’m currently working on 
-- **Neurospike**: A simulation tool that allows for users to explore neuronal dynamics through basic computational neuron models
+- **Eduspike**: A powerful, open-source web app that makes learning computational neuron modelling more intuitive than ever before!
 
 ## 💻 Technologies I am familiar with
 
@@ -27,6 +27,9 @@ In my spare time, I enjoy spending time with my family and friends, sim-racing a
    <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg" alt="tensorflow" width="40" height="40"/></a>
     <a href="https://www.python.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="python" width="40" height="40"/></a>
   <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/></a>
+<a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/c-1.svg" alt="c" width="40" height="40"/></a>
+  <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/c.svg" alt="cpp" width="40" height="40"/></a>
+     <a href="https://java.com/en/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/java.svg" alt="cpp" width="40" height="40"/></a>
 </p>
 
 <!--
