@@ -10,7 +10,7 @@ Recently, I have founded an organisation called Neurospike. Our mission is to de
 
 In my spare time, I enjoy spending time with my family and friends, sim-racing and video games.
 ## 🔭 What I’m currently working on 
-- **Eduspike**: A powerful, open-source web app that makes learning computational neuron modelling more intuitive than ever before!
+- **Neurospike**: A powerful, open-source web app that makes learning computational neuron modelling more intuitive than ever before!
 
 ## 💻 Technologies I am familiar with
 
