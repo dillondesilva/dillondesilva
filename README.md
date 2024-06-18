@@ -6,7 +6,7 @@ I’m currently a student at The University of Sydney, studying a double degree 
 
 Following my high school graduation, I began working professionally as an engineer alongside my university degree commitments. For a more detailed overview of my career and experiences, please visit [my resume](https://dillondesilva.github.io/resume/).
 
-Recently, I have founded an organisation called Neurospike. Our mission is to develop awesome software tools for neural computation.
+Recently, I have been building an app called Neurospike which is all about understanding computational models of biological neurons in a more intuitive way.
 
 In my spare time, I enjoy spending time with my family and friends, sim-racing and video games.
 ## 🔭 What I’m currently working on 
