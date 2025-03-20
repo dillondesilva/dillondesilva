@@ -9,8 +9,6 @@ Following my high school graduation, I began working professionally as an engine
 Recently, I have been building an app called Neurospike which is all about understanding computational models of biological neurons in a more intuitive way.
 
 In my spare time, I enjoy spending time with my family and friends, sim-racing and video games.
-## 🔭 What I’m currently working on 
-- **[Neurospike](https://dillondesilva.github.io/neurospike/)**: A powerful, open-source web app that makes learning computational neuron modelling more intuitive than ever before!
 
 ## 💻 Technologies I am familiar with
 
